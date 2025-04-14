@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Adaugă Notă</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>🧾 Evaluează Temă – Adaugă Notă</h2>
+    <form onsubmit="return trimiteNota()">
+      <div class="mb-3">
+        <label class="form-label">Student</label>
+        <input type="text" class="form-control" value="Ion Popescu" disabled>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Curs</label>
+        <input type="text" class="form-control" value="Programare Web" disabled>
+      </div>
+      <div class="mb-3">
+        <label for="comentariu" class="form-label">Comentariu profesor</label>
+        <textarea id="comentariu" class="form-control" rows="3" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="nota" class="form-label">Notă</label>
+        <input type="number" id="nota" class="form-control" min="1" max="10" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Salvează Nota</button>
+      <a href="lista.html" class="btn btn-secondary">Renunță</a>
+    </form>
+  </div>
+
+  <script>
+    function trimiteNota() {
+      const nota = document.getElementById("nota").value;
+      const comentariu = document.getElementById("comentariu").value.trim();
+
+      if (nota < 1 || nota > 10 || comentariu === "") {
+        alert("Completează corect formularul!");
+        return false;
+      }
+
+      alert("Notă adăugată cu succes! (simulare)");
+      window.location.href = "lista.html";
+      return false;
+    }
+  </script>
+</body>
+</html>

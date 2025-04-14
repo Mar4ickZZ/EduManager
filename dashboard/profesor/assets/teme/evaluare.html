@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Evaluare Temă</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>📝 Evaluare Temă</h2>
+
+    <div class="card mt-4">
+      <div class="card-body">
+        <h5 class="card-title">Student: <strong>Ion Popescu</strong></h5>
+        <p><strong>Curs:</strong> Programare Web</p>
+        <p><strong>Descriere temă:</strong> Tema despre formulare și validare</p>
+        <p><strong>Fișier:</strong> <a href="../img/example.pdf" target="_blank">Descarcă tema</a></p>
+        <p><strong>Data trimiterii:</strong> 2025-04-10</p>
+
+        <form onsubmit="return trimiteEvaluare()">
+          <div class="mb-3">
+            <label for="nota" class="form-label">Nota acordată:</label>
+            <select id="nota" class="form-select" required>
+              <option value="">Selectează...</option>
+              <option>10</option>
+              <option>9</option>
+              <option>8</option>
+              <option>7</option>
+              <option>6</option>
+              <option>5</option>
+              <option>4</option>
+              <option>3</option>
+              <option>2</option>
+              <option>1</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="comentariu" class="form-label">Comentariu (opțional):</label>
+            <textarea id="comentariu" class="form-control" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Trimite Evaluare</button>
+          <a href="lista.html" class="btn btn-secondary">Înapoi</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function trimiteEvaluare() {
+      const nota = document.getElementById("nota").value;
+      if (!nota) {
+        alert("Te rugăm să selectezi o notă.");
+        return false;
+      }
+
+      alert("Evaluare trimisă cu succes! (simulare)");
+      window.location.href = "lista.html"; // sau pagina unde se revine
+      return false;
+    }
+  </script>
+</body>
+</html>

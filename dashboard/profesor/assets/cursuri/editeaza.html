@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Editează Curs</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>🛠️ Editează Curs</h2>
+    <form onsubmit="return editeazaCurs()">
+      <div class="mb-3">
+        <label for="titlu" class="form-label">Titlu curs</label>
+        <input type="text" class="form-control" id="titlu" value="Programare Web" required>
+      </div>
+      <div class="mb-3">
+        <label for="descriere" class="form-label">Descriere</label>
+        <textarea class="form-control" id="descriere" rows="3" required>Introducere în HTML, CSS și JS</textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Salvează modificările</button>
+      <a href="lista.html" class="btn btn-secondary">Renunță</a>
+    </form>
+  </div>
+
+  <script>
+    function editeazaCurs() {
+      alert("Modificări salvate (simulare).");
+      window.location.href = "lista.html";
+      return false;
+    }
+  </script>
+</body>
+</html>

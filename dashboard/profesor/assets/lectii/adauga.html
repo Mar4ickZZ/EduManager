@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Adaugă Lecție</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>➕ Adaugă Lecție Nouă</h2>
+    <form onsubmit="return valideazaLectie()">
+      <div class="mb-3">
+        <label for="titlu" class="form-label">Titlu lecție</label>
+        <input type="text" class="form-control" id="titlu" required>
+      </div>
+      <div class="mb-3">
+        <label for="data" class="form-label">Data</label>
+        <input type="date" class="form-control" id="data" required>
+      </div>
+      <div class="mb-3">
+        <label for="continut" class="form-label">Conținut lecție</label>
+        <textarea class="form-control" id="continut" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Salvează</button>
+      <a href="lista.html" class="btn btn-secondary">Renunță</a>
+    </form>
+  </div>
+
+  <script>
+    function valideazaLectie() {
+      const titlu = document.getElementById("titlu").value.trim();
+      const data = document.getElementById("data").value;
+      const continut = document.getElementById("continut").value.trim();
+
+      if (!titlu || !data || !continut) {
+        alert("Toate câmpurile sunt obligatorii.");
+        return false;
+      }
+
+      alert("Lecția a fost adăugată! (simulare)");
+      window.location.href = "lista.html";
+      return false;
+    }
+  </script>
+</body>
+</html>

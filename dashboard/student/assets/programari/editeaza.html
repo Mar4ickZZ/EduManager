@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Editare Programare</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <script>
+    function validateForm() {
+      var curs = document.getElementById('curs').value;
+      var data = document.getElementById('data').value;
+      var ora = document.getElementById('ora').value;
+
+      if (curs == "" || data == "" || ora == "") {
+        alert("Te rugăm să completezi toate câmpurile!");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>✏️ Editează Programarea</h2>
+
+    <form onsubmit="return validateForm()" action="save_editare.html" method="post">
+      <div class="mb-3">
+        <label for="curs" class="form-label">Curs</label>
+        <input type="text" class="form-control" id="curs" name="curs" value="Programare Web" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="data" class="form-label">Data Programării</label>
+        <input type="date" class="form-control" id="data" name="data" value="2025-04-15" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="ora" class="form-label">Ora Programării</label>
+        <input type="time" class="form-control" id="ora" name="ora" value="10:00" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Salvează Modificările</button>
+      <a href="programari-student.html" class="btn btn-secondary ms-2">Anulează</a>
+    </form>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Editează Rol</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>📝 Editează Rol</h2>
+
+    <!-- Formular de editare a rolului -->
+    <form>
+      <div class="row g-2">
+        <!-- Nume utilizator -->
+        <div class="col-md-4">
+          <label for="numeUtilizator" class="form-label">Nume utilizator</label>
+          <input type="text" class="form-control" id="numeUtilizator" value="Adrian Vasilescu" required>
+        </div>
+        
+        <!-- Nume rol -->
+        <div class="col-md-4">
+          <label for="numeRol" class="form-label">Nume rol</label>
+          <input type="text" class="form-control" id="numeRol" value="admin" required>
+        </div>
+        
+        <!-- Descriere rol -->
+        <div class="col-md-4">
+          <label for="descriereRol" class="form-label">Descriere</label>
+          <input type="text" class="form-control" id="descriereRol" value="Acces complet la toate funcțiile aplicației" required>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <button type="submit" class="btn btn-primary">Salvează Modificările</button>
+        <a href="admin/roluri.html" class="btn btn-secondary">Înapoi la Roluri</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

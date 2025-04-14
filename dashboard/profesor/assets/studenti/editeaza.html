@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Editează Student</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <script>
+    function validateForm() {
+      var nume = document.getElementById('nume').value;
+      var prenume = document.getElementById('prenume').value;
+      var email = document.getElementById('email').value;
+      var telefon = document.getElementById('telefon').value;
+
+      if (nume == "" || prenume == "" || email == "" || telefon == "") {
+        alert("Te rugăm să completezi toate câmpurile!");
+        return false;
+      }
+      // Poți adăuga validare suplimentară pentru email și telefon aici
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>✏️ Editează Informațiile Studentului</h2>
+
+    <form onsubmit="return validateForm()" action="save_student_changes.html" method="post">
+      <div class="mb-3">
+        <label for="nume" class="form-label">Nume</label>
+        <input type="text" class="form-control" id="nume" name="nume" value="Ion" required>
+      </div>
+      <div class="mb-3">
+        <label for="prenume" class="form-label">Prenume</label>
+        <input type="text" class="form-control" id="prenume" name="prenume" value="Popescu" required>
+      </div>
+      <div class="mb-3">
+        <label for="curs" class="form-label">Curs</label>
+        <input type="text" class="form-control" id="curs" name="curs" value="Programare Web" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" value="ion.popescu@example.com" required>
+      </div>
+      <div class="mb-3">
+        <label for="telefon" class="form-label">Telefon</label>
+        <input type="tel" class="form-control" id="telefon" name="telefon" value="123456789" required>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Salvează Modificările</button>
+    </form>
+  </div>
+</body>
+</html>

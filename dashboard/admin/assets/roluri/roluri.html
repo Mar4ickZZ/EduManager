@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Roluri</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <h2 class="mb-4">👤 Gestiune Roluri</h2>
+
+    <!-- Formular pentru adăugare rol -->
+    <form class="mb-5" onsubmit="return false;">
+      <div class="row g-2 align-items-end">
+        <div class="col-md-4">
+          <label for="numeUtilizator" class="form-label">Nume utilizator</label>
+          <input type="text" class="form-control" id="numeUtilizator" placeholder="Ex: Ion Popescu" required>
+        </div>
+        <div class="col-md-4">
+          <label for="numeRol" class="form-label">Nume rol</label>
+          <input type="text" class="form-control" id="numeRol" placeholder="Ex: profesor, student, admin" required>
+        </div>
+        <div class="col-md-2">
+          <label for="descriereRol" class="form-label">Descriere</label>
+          <input type="text" class="form-control" id="descriereRol" placeholder="Acces complet, doar vizualizare etc.">
+        </div>
+        <div class="col-md-2">
+            <a href="adauga.html" class="btn btn-success">+ Adaugă Rol Nou</a>
+        </div>
+      </div>
+    </form>
+
+    <!-- Buton pentru adăugare rol nou -->
+
+    <!-- Tabelul cu roluri existente -->
+    <h4>Roluri existente:</h4>
+    <table class="table table-bordered table-hover bg-white shadow-sm">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nume utilizator</th>
+          <th>Nume rol</th>
+          <th>Descriere</th>
+          <th>Acțiuni</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Ion Popescu</td>
+          <td>student</td>
+          <td>Acces lecții și teme</td>
+          <td>
+            <a href="editeaza.html" class="btn btn-sm btn-outline-primary">Editează</a>
+            <button onclick="confirmStergere()" class="btn btn-danger btn-sm">Șterge</button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Maria Ionescu</td>
+          <td>profesor</td>
+          <td>Gestionare cursuri și note</td>
+          <td>
+            <a href="editeaza.html" class="btn btn-sm btn-outline-primary">Editează</a>
+            <button onclick="confirmStergere()" class="btn btn-danger btn-sm">Șterge</button>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Adrian Vasilescu</td>
+          <td>admin</td>
+          <td>Acces complet la toate funcțiile aplicației</td>
+          <td>
+            <a href="editeaza.html" class="btn btn-sm btn-outline-primary">Editează</a>
+            <button onclick="confirmStergere()" class="btn btn-danger btn-sm">Șterge</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="../../dashboard-admin.html" class="btn btn-primary mt-3">Înapoi la Pagina Principală</a>
+  </div>
+
+  <script>
+    function confirmStergere() {
+      if (confirm("Ștergi rolul?")) {
+        alert("Rolul a fost ștearsă (simulare).");
+      }
+    }
+  </script>
+</body>
+</html>

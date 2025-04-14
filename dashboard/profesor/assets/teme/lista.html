@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Teme primite</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>📚 Teme primite de la studenți</h2>
+
+    <table class="table table-bordered mt-4">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Student</th>
+          <th>Curs</th>
+          <th>Descriere</th>
+          <th>Fișier</th>
+          <th>Data trimiterii</th>
+          <th>Stare</th>
+          <th>Acțiune</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Ion Popescu</td>
+          <td>Programare Web</td>
+          <td>Tema despre formulare și validare</td>
+          <td><a href="../img/example.pdf" target="_blank">tema1.pdf</a></td>
+          <td>2025-04-10</td>
+          <td><span class="badge bg-warning text-dark">Ne-evaluată</span></td>
+          <td>
+            <a href="evaluare.html" class="btn btn-sm btn-primary">Evaluează</a>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Maria Ionescu</td>
+          <td>Baze de date</td>
+          <td>Tema despre normalizare</td>
+          <td><a href="../img/bd_tema.pdf" target="_blank">bd_tema.pdf</a></td>
+          <td>2025-04-12</td>
+          <td><span class="badge bg-success">Evaluată</span></td>
+          <td>
+            <button class="btn btn-sm btn-secondary" disabled>Evaluată</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

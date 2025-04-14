@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Adaugă Curs</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>➕ Adaugă Curs Nou</h2>
+    <form onsubmit="return valideazaFormular()">
+      <div class="mb-3">
+        <label for="titlu" class="form-label">Titlu curs</label>
+        <input type="text" class="form-control" id="titlu" required>
+      </div>
+      <div class="mb-3">
+        <label for="descriere" class="form-label">Descriere</label>
+        <textarea class="form-control" id="descriere" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Salvează</button>
+      <a href="lista.html" class="btn btn-secondary">Renunță</a>
+    </form>
+  </div>
+
+  <script>
+    function valideazaFormular() {
+      const titlu = document.getElementById("titlu").value.trim();
+      const descriere = document.getElementById("descriere").value.trim();
+
+      if (!titlu || !descriere) {
+        alert("Toate câmpurile sunt obligatorii.");
+        return false;
+      }
+
+      alert("Curs adăugat cu succes! (simulare)");
+      window.location.href = "lista.html";
+      return false;
+    }
+  </script>
+</body>
+</html>

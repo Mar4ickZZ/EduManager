@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Încarcă Material</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    #preview {
+      display: none;
+      max-width: 200px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>📤 Încarcă un material nou</h2>
+    <form onsubmit="return valideazaUpload()" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="fisier" class="form-label">Alege fișier (PDF, PNG, JPG)</label>
+        <input class="form-control" type="file" id="fisier" accept=".pdf, image/*" required>
+      </div>
+      <img id="preview" class="img-thumbnail" alt="Preview imagine">
+      <button type="submit" class="btn btn-primary">Încarcă</button>
+      <a href="lista.html" class="btn btn-secondary">Renunță</a>
+    </form>
+  </div>
+
+  <script>
+    const fisierInput = document.getElementById("fisier");
+    const preview = document.getElementById("preview");
+
+    fisierInput.addEventListener("change", function () {
+      const file = this.files[0];
+      if (!file) return;
+
+      if (file.type.startsWith("image/")) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+          preview.style.display = "block";
+        };
+        reader.readAsDataURL(file);
+      } else {
+        preview.style.display = "none";
+      }
+    });
+
+    function valideazaUpload() {
+      const file = fisierInput.files[0];
+      if (!file) {
+        alert("Selectează un fișier!");
+        return false;
+      }
+
+      alert("Fișier încărcat cu succes! (simulare)");
+      window.location.href = "lista.html";
+      return false;
+    }
+  </script>
+</body>
+</html>

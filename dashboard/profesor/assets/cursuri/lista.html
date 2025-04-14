@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Cursurile Mele</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="mb-4">📘 Cursurile Mele</h2>
+    <a href="adauga.html" class="btn btn-success mb-3">+ Adaugă Curs</a>
+
+    <table class="table table-bordered table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Denumire Curs</th>
+          <th>Descriere</th>
+          <th>Acțiuni</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Programare Web</td>
+          <td>Introducere în HTML, CSS și JS</td>
+          <td>
+            <a href="editeaza.html" class="btn btn-primary btn-sm">Editare</a>
+            <button onclick="confirmStergere()" class="btn btn-danger btn-sm">Ștergere</button>
+          </td>
+        </tr>
+        <!-- Alte rânduri... -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function confirmStergere() {
+      if (confirm("Ești sigur că vrei să ștergi acest curs?")) {
+        alert("Cursul a fost șters (simulare).");
+      }
+    }
+  </script>
+</body>
+</html>

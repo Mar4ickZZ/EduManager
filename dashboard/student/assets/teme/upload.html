@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Încarcă Temă</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>⬆️ Încarcă Temă</h2>
+    <form onsubmit="return valideazaTema()">
+      <div class="mb-3">
+        <label for="curs" class="form-label">Curs</label>
+        <select id="curs" class="form-select" required>
+          <option value="">Alege un curs...</option>
+          <option value="1">Programare Web</option>
+          <option value="2">Baze de date</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="descriere" class="form-label">Descriere temă</label>
+        <input type="text" id="descriere" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="fisier" class="form-label">Fișier temă (.pdf, .docx)</label>
+        <input type="file" id="fisier" class="form-control" accept=".pdf,.doc,.docx" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Trimite</button>
+      <a href="lista.html" class="btn btn-secondary">Renunță</a>
+    </form>
+  </div>
+
+  <script>
+    function valideazaTema() {
+      const curs = document.getElementById("curs").value;
+      const descriere = document.getElementById("descriere").value.trim();
+      const fisier = document.getElementById("fisier").files[0];
+
+      if (!curs || !descriere || !fisier) {
+        alert("Completează toate câmpurile!");
+        return false;
+      }
+
+      alert("Temă încărcată cu succes! (simulare)");
+      window.location.href = "lista.html";
+      return false;
+    }
+  </script>
+</body>
+</html>
